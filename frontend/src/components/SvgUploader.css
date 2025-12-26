@@ -1,0 +1,117 @@
+.svg-uploader {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.uploader-label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.dropzone {
+  border: 3px dashed #cbd5e0;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #f7fafc;
+}
+
+.dropzone:hover {
+  border-color: #667eea;
+  background-color: #edf2f7;
+}
+
+.dropzone.active {
+  border-color: #667eea;
+  background-color: #e6f2ff;
+  transform: scale(1.02);
+}
+
+.dropzone.has-file {
+  border-color: #48bb78;
+  background-color: #f0fff4;
+}
+
+.upload-icon,
+.check-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  color: #667eea;
+}
+
+.dropzone.has-file .check-icon {
+  color: #48bb78;
+}
+
+.upload-message,
+.drop-message,
+.file-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.primary-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.secondary-text {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.size-limit {
+  font-size: 0.875rem;
+  color: #a0aec0;
+}
+
+.drop-message p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #667eea;
+}
+
+.file-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.25rem;
+}
+
+.file-size {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 0.5rem;
+}
+
+.click-to-change {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .dropzone {
+    padding: 2rem 1rem;
+  }
+  
+  .upload-icon,
+  .check-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .primary-text {
+    font-size: 1rem;
+  }
+}
