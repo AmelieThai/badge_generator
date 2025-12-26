@@ -42,12 +42,8 @@ def validate_svg_file(file):
     if not file.filename.lower().endswith('.svg'):
         return None, "File must be an SVG"
     
-    # Read file to check size
-    file.seek(0, os.SEEK_END)
-    size = file.tell()
-    file.seek(0)
-    
-    if size > MAX_FILE_SIZE:
+    # Check file size using content_length
+    if file.content_length and file.content_length > MAX_FILE_SIZE:
         return None, f"File size exceeds maximum of {MAX_FILE_SIZE / (1024*1024)}MB"
     
     return True, None

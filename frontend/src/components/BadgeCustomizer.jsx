@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import SliderControl from './SliderControl';
 import SvgUploader from './SvgUploader';
@@ -14,18 +14,18 @@ function BadgeCustomizer() {
   const [backendStatus, setBackendStatus] = useState(null);
 
   // Check backend health on mount
-  useEffect(() => {
-    checkBackendHealth();
-  }, []);
-
-  const checkBackendHealth = async () => {
+  const checkBackendHealth = useCallback(async () => {
     try {
       const response = await axios.get('/api/health');
       setBackendStatus(response.data);
     } catch (err) {
       setBackendStatus({ status: 'error', openscad_available: false });
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    checkBackendHealth();
+  }, [checkBackendHealth]);
 
   const handleGenerate = async () => {
     // Reset states

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './PreviewPanel.css';
 
 function PreviewPanel({ svgFile }) {
-  const [previewUrl, setPreviewUrl] = React.useState(null);
+  const [previewUrl, setPreviewUrl] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (svgFile) {
       const url = URL.createObjectURL(svgFile);
       setPreviewUrl(url);
