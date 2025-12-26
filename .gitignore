@@ -47,3 +47,8 @@ temp_*
 # Environment variables
 .env
 .env.local
+# Test files
+backend/test_api.py
+
+# Build output
+frontend/build/
