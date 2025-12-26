@@ -44,13 +44,17 @@ pip install -r requirements.txt
 - `PORT` - Server port (default: `5000`)
 - `MAX_FILE_SIZE` - Maximum SVG file size in bytes (default: `5242880` = 5MB)
 - `GENERATIONS_DIR` - Directory for storing generations (default: `./generations/`)
+- `FLASK_DEBUG` - Enable Flask debug mode (default: `False`, set to `true` for development)
 
 ### Example .env file:
 ```bash
 OPENSCAD_PATH=/usr/bin/openscad
 PORT=5000
 MAX_FILE_SIZE=5242880
+FLASK_DEBUG=true
 ```
+
+**⚠️ Security Warning:** Never set `FLASK_DEBUG=true` in production as it enables the debugger which could allow arbitrary code execution.
 
 ## Running the Server
 

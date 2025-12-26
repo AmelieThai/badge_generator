@@ -184,9 +184,12 @@ def generate_badge():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    
     print(f"Starting Badge Generator Backend on port {port}")
     print(f"OpenSCAD path: {OPENSCAD_PATH}")
     print(f"Generations directory: {GENERATIONS_DIR}")
+    print(f"Debug mode: {debug_mode}")
     
     # Check OpenSCAD on startup
     if check_openscad_available():
@@ -195,4 +198,4 @@ if __name__ == '__main__':
         print("✗ WARNING: OpenSCAD is not available!")
         print("  Install OpenSCAD CLI to enable badge generation")
     
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=debug_mode)
